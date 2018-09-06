@@ -1,3 +1,28 @@
 :host {
     /* This is equivalent of the 'body' selector of a page. */
 }
+
+.dashboard-grid {
+    max-width: 1200px;
+    padding: 2em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 0.8em;
+}
+
+.grid__2rows {
+    grid-row-end: span 2;
+}
+
+.grid__3rows {
+    grid-row-end: span 3;
+}
+
+.grid__left {
+    grid-column: 1 / 2;
+}
+
+.grid__right {
+    grid-column: 2 / 3;
+}

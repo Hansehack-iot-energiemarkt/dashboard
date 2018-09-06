@@ -1,0 +1,7 @@
+div.wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    font-style: italic;
+    /* border: #6bc5ff 1px solid; */
+}

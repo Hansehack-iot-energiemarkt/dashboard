@@ -1,0 +1,13 @@
+<p *ngIf="items.isEmpty">
+    Nothing to see here! No clients connected.
+</p>
+
+<div *ngIf="items.isNotEmpty">
+    <ul>
+        <li *ngFor="let item of items; let i=index">
+            <material-icon *ngIf="item.provider" icon="offline_bolt"></material-icon>
+            <material-icon *ngIf="item.receiver" icon="power"></material-icon>
+            <span>{{item}}</span>
+        </li>
+    </ul>
+</div>
