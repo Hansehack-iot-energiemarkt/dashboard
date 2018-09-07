@@ -5,7 +5,7 @@ import 'package:angular_components/angular_components.dart';
 
 @Component(
   selector: 'client-list',
-  styleUrls: ['client_list_component.css'],
+  styleUrls: ['../list_component.css'],
   templateUrl: 'client_list_component.html',
   directives: [
     MaterialIconComponent,

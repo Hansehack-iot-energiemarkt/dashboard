@@ -2,10 +2,13 @@
     /* This is equivalent of the 'body' selector of a page. */
 }
 
-.dashboard-grid {
+.material-content {
     max-width: 1200px;
     padding: 2em;
     margin: 0 auto;
+}
+
+.dashboard-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 0.8em;

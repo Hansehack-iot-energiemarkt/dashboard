@@ -7,7 +7,7 @@
         <li *ngFor="let item of items; let i=index">
             <material-icon *ngIf="item.provider" icon="offline_bolt"></material-icon>
             <material-icon *ngIf="item.receiver" icon="power"></material-icon>
-            <span>{{item}}</span>
+            <span>{{item.name}}</span>
         </li>
     </ul>
 </div>

@@ -1,20 +1,24 @@
 <header class="material-header shadow">
     <div class="material-header-row">
-        <span class="material-header-title">Graph</span>
+        <span class="material-header-title">dashboard</span>
         <div class="material-spacer"></div>
     </div>
 </header>
 
-<div class="dashboard-grid">
-    <div class="mdc-card mdc-card--outlined grid__left">LORAWAN</div>
-
-    <div class="mdc-card mdc-card--outlined grid__right grid__2rows">
-        <graph></graph>
+<div class="material-content">
+    <div class="dashboard-grid">
+        <div class="mdc-card mdc-card--outlined grid__left">LORAWAN</div>
+    
+        <div class="mdc-card mdc-card--outlined grid__right grid__2rows">
+            <graph></graph>
+        </div>
+    
+        <div class="mdc-card mdc-card--outlined grid__left grid__3rows">
+            <client-list></client-list>
+        </div>
+    
+        <div class="mdc-card mdc-card--outlined grid__right">
+            <activity-list></activity-list>
+        </div>
     </div>
-
-    <div class="mdc-card mdc-card--outlined grid__left grid__3rows">
-        <client-list></client-list>
-    </div>
-
-    <div class="mdc-card mdc-card--outlined grid__right">IPSUM</div>
 </div>

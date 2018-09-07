@@ -24,7 +24,7 @@ class GraphComponent implements AfterContentInit, AfterViewInit {
 
   static Random rnd = new Random();
 
-  static Function gen = () => rnd.nextInt(8) + 4;
+  static Function gen = () => rnd.nextInt(8) + rnd.nextInt(4);
 
   List<int> data = new List.generate(24, (_) => gen());
 
@@ -59,6 +59,7 @@ class GraphComponent implements AfterContentInit, AfterViewInit {
         new ChartDataSets(
           name: "",
           data: data,
+          color: "#f58220",
           marker: new ChartMarker(
             enabled: false,
           ),
@@ -74,6 +75,7 @@ class GraphComponent implements AfterContentInit, AfterViewInit {
     new Timer.periodic(new Duration(seconds: 1), (Timer t) {
       data.removeAt(0);
       data.add(gen());
+      chart.reflow();
       chart.update(chartConfig, true);
     });
   }
