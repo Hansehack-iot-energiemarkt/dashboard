@@ -3,16 +3,12 @@ library paho;
 
 import 'package:js/js.dart';
 
-@JS('Paho.MQTT.Client')
+@JS()
 class Client {
   external String get host;
-  external void set host(String host);
   external num get port;
-  external void set port(num port);
   external String get path;
-  external void set path(String path);
   external String get clientId;
-  external void set clientId(String clientId);
   
   external Function get onConnectionLost;
   external void set onConnectionLost(Function onConnectionLost);
@@ -23,7 +19,7 @@ class Client {
   external Function get onConnected;
   external void set onConnected(Function onConnected);
   
-  external factory Client(ClientOptions options);
+  external factory Client({String host, num port, String path, String clientId});
 
   external void connect(ConnectOptions connectOptions);
   external void disconnect();
@@ -32,7 +28,7 @@ class Client {
   external void subscribe(String filter, SubscribeOptions subscribeOptions);
 }
 
-@JS('Paho.MQTT.Message')
+@JS()
 class Message {
   external String get payloadString;
   external String get destinationName;
@@ -43,19 +39,8 @@ class Message {
   external void set retained(bool retained);
   external bool get duplicate;
   external void set duplicate(bool duplicate);
-  
+
   external factory Message(String payload);
-}
-
-@JS()
-@anonymous
-abstract class ClientOptions {
-  external String get host;
-  external num get port;
-  external String get path;
-  external String get clientId;
-
-  external factory ClientOptions({String host, num port, String path, String clientId});
 }
 
 @JS()

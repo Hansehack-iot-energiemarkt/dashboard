@@ -6,6 +6,8 @@ import 'src/list/client_list/client_list_component.dart';
 import 'src/list/activity_list/activity_list_component.dart';
 import 'src/graph/graph_component.dart';
 
+import 'src/paho.dart';
+
 // AngularDart info: https://webdev.dartlang.org/angular
 // Components info: https://webdev.dartlang.org/components
 
@@ -24,10 +26,22 @@ import 'src/graph/graph_component.dart';
   ],
   providers: [ClassProvider(MqttService)],
 )
-class AppComponent implements AfterContentInit {
+class AppComponent implements AfterViewInit {
 
-  ngAfterContentInit() {
-    new MqttService().connect();
+  ngAfterViewInit() {
+    String host = "tcp://10.250.252.184:1883";
+    print('${host.runtimeType} :  $host');
+    Client client = new Client(
+      host: host,
+      clientId: "dashboard",
+    );
+
+    client.connect(new ConnectOptions(
+      hosts: [client.host],
+      ports: [client.port],
+      onSuccess: () => print("Connected sucessfully"),
+      onFailure: () => print("Failed to connect"),
+    ));
   }
 }
 
