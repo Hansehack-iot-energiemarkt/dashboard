@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:convert';
 
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
@@ -14,15 +15,16 @@ import 'package:angular_components/angular_components.dart';
   ],
   providers: [],
 )
-class ClientListComponent implements OnInit {
+class ClientListComponent implements AfterContentInit {
   static Random rnd = new Random();
+  static JsonDecoder json = new JsonDecoder();
   
   List<ClientItem> items = [];
 
   @override
-  ngOnInit() {
-    for (int i = 0; i < 20; i++) {
-      items.add(new ClientItem("client_$i", rnd.nextBool() ? ClientType.PROVIDER : ClientType.RECEIVER));
+  ngAfterContentInit() {
+    for (int i = 0; i < 12; i++) {
+      items.add(new ClientItem("client_$i", rnd.nextDouble() > 0.7 ? ClientType.RECEIVER : ClientType.PROVIDER));
     }
   }
 }

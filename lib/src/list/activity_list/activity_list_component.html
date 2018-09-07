@@ -6,13 +6,13 @@
     <ul>
         <li *ngFor="let item of items; let i=index">
             <span>{{item.name}}</span>
-            <material-icon class="yellow" icon="flash_on"></material-icon>
-            <span class="yellow">400W</span>
-            <material-icon class="green" icon="call_made"></material-icon>
-            <span class="green">+4,000</span>
-            <material-icon class="red" icon="call_received"></material-icon>
-            <span class="red">-4,000</span>
-            <span class="grey">02:00</span>
+            <!-- <material-icon class="yellow" icon="flash_on"></material-icon>
+            <span class="yellow">400W</span> -->
+            <!-- <span class="green">+4,000</span> -->
+            <material-icon *ngIf="item.sell" class="green" icon="call_made"></material-icon>
+            <material-icon *ngIf="item.buy" class="red" icon="call_received"></material-icon>
+            <!-- <span class="red">-4,000</span> -->
+            <!-- <span class="grey">02:00</span> -->
         </li>
     </ul>
 </div>
